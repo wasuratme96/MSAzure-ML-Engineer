@@ -5,7 +5,7 @@
 
 ## Summary
 This data set is Bank Marketing from [UCI-ML Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing). <br>
-The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be `('yes')` or not `('no')` subscribed.
+The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be `('yes')` or not `('no')` subscribed. <br>
 So, we want to use these data features to predict whether bank term doposit would be `('yes')` or `('no')` in subscribtion.
 
 The best performing model is a ....
