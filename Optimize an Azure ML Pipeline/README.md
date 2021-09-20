@@ -195,7 +195,9 @@ We can spend more time on cleaning data and find the insight from model with mod
 
 ## Future Work
 1.) Deep drive into data preprocessing by using model explainability module from AutoML(cleaning, feature engineering and feature selection)
+
 2.) For Scikit-Learn pipeline, use more complex model and number of hyperparameter to be tunned together with difference searching method `BayesianParameterSampling`. Early stopping policy also can be try with difference strategy.
+
 3.) Test both model pipeline on unseen data.
 ## Reference
 
