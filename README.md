@@ -3,11 +3,13 @@ To collect all of project materials from Machine Learning Engineer with Azure fr
 
 ## Project 1 - [Optimizing an ML Pipeline in Azure](https://github.com/wasuratme96/MSAzure-ML-Engineer/tree/main/Optimize%20an%20Azure%20ML%20Pipeline)
 ![png](img/creating-and-optimizing-an-ml-pipeline.png)
+
 In this project, I have created and optimize an ML pipeline by using custom training model script from Logistic Regression and perform hyperparameters tuning by HyperDrive. Comparing with AutoML to build and optimize the model. <br>
+
 Both of pipeline will be compared and tracked on AzureML Studio.
-> * Dataset
-> - Bank Marketing from [UCI-ML Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
-> * Problem Statement
-> - To predict will customer subscribe the bank deposit program or not ? (Yes vs. No.)
-> * Model Type
-> - Binary Classification
+> * **Dataset** <br>
+>Bank Marketing from [UCI-ML Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
+> * **Problem Statement** <br>
+>To predict will customer subscribe the bank deposit program or not ? (Yes vs. No.) <br>
+> * **Model Type** <br>
+>Binary Classification
