@@ -5,13 +5,30 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, we bui
 
 ## Summary
 This data set is Bank Marketing from [UCI-ML Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing). <br>
-The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be `('yes')` or not `('no')` subscribed. <br>
-So, we want to use these data features to predict whether bank term doposit would be `('yes')` or `('no')` in subscribtion.
+The data is related with direct marketing campaigns of a Portuguese banking institution. This marketing campaigns is conducted by phone calls. Purpose is to direct contact to customer if the product (bank term deposit) would be `('yes')` or  `('no')` in subscription. <br>
+So, we want to use these historical data features to predict whether bank term doposit would be `('yes')` or `('no')` in subscription.
 
-The best performing model is a ....
+The best performing model is a `VotingEnssemble` from AutoML Pipeline with accuracy = **0.91549** comparing with **0.91002** in accuracy from `Scikit Learn-Logisitc Regression with HyperDrive`
 
 ## ML Pipeline
 ### Scikit-learn Pipeline with HyperDrive
+#### Pipeline Architecture
+On Scikit-lean pipeline, it will compose with python script (`train.py`) to handle all the data preprocessing and training Logistic Regression Model from Scikit-Learn. Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all the process with Azure ML environment via Azure SDK. 
+
+-> Starting from connect to the **Workspace** 
+
+-> create **ComputeTarget** 
+
+-> config **Environment** for python script 
+
+-> establish and config **Hyperparameter Tuning** with **HyperDrive** 
+
+-> submit **Experiment** to Azure ML 
+
+-> register best model.
+
+
+
 ### AutoML
 
 ### Pipeline comparison
