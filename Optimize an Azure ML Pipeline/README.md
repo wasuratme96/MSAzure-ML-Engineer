@@ -47,8 +47,14 @@ Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all 
 >```
 > * Establish and config **Hyperparameter Tuning** with **HyperDrive**
 > 
-> `RandomParameterSampling` is selected with 2 hyperparamter for searching (`C` and `max_iter`)
-> `EarlyStopping` policy is slected to be `BanditPolicy`
+> `RandomParameterSampling` is selected with 2 hyperparamter for searching (`C` and `max_iter`) <br>
+>Benefit of `RandomParameterSampling` on HyperDrive is it support both discrete (`choice`) and continuous (many statictic functions) set of hyperparameters. Together with `EarlyStopping` policy that can select by user. <br>
+>
+> This make the `RandomParameterSampling` have flexible in setting, moderate to low time consume of hyper parameter tuning and good for discovery the group of hypermeters. (Mostly requires additional number of time to run) <br>
+> 
+> `EarlyStopping` policy is slected to be `BanditPolicy` <br>
+> This policy can stop an iteration if the selected performance metric under performs comparing with the best run by specified margin which is `slack_factor`. With this character, it can save time when we perform large hyperparameter search space.
+> 
 > ```python
 > # Paramter for tuning
 >ps = RandomParameterSampling(
@@ -199,6 +205,11 @@ We can spend more time on cleaning data and find the insight from model with mod
 2.) For Scikit-Learn pipeline, use more complex model and number of hyperparameter to be tunned together with difference searching method `BayesianParameterSampling`. Early stopping policy also can be try with difference strategy.
 
 3.) Test both model pipeline on unseen data.
+
+## Clear Cluster after use
+![png](img/cluster-delete.png)
+Delete cluster via UI on Azure Machine Learning Studio
+
 ## Reference
 
 ### Initial code
