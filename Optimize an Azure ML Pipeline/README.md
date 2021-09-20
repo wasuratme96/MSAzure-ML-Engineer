@@ -48,6 +48,7 @@ Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all 
 > * Establish and config **Hyperparameter Tuning** with **HyperDrive**
 > 
 > `RandomParameterSampling` is selected with 2 hyperparamter for searching (`C` and `max_iter`)
+> `EarlyStopping` policy is slected to be `BanditPolicy`
 > ```python
 > # Paramter for tuning
 >ps = RandomParameterSampling(
@@ -100,6 +101,37 @@ Best performance is `C` = 1.2955722626880386 and `max_iter` = 100 with accuracy 
 
 
 ### AutoML
+![png](img/automl.png)
+#### Pipeline Architecture
+After complete clean data (import function from `train.py`) and split data for training with same pipeline of Scikit-Learn with Hyperdrive, AutoML set up with below configurations.
+>```python
+>automl_config = AutoMLConfig(
+>    experiment_timeout_minutes=30,
+>    task= 'classification',
+>    primary_metric= 'accuracy',
+>    training_data= train_ds,
+>    label_column_name= 'y',
+>    iterations = 10,
+>    max_concurrent_iterations = 4,
+>    n_cross_validations = 4,
+>    featurization = 'auto')
+>```
+* Submit **Experiment** to Azure ML 
+>```python
+>automl_experiment = Experiment(ws, 'bank-market-automl-sdk')
+>automl_run = automl_experiment.submit(automl_config)
+>```
+* Result of each iterations can be found as below.
+![png](img/automl-iterations.png)
+
+* Get the complete pipeline on the best run
+> ```python
+>best_run, fitted_model = automl_run.get_output()
+>best_run_metrics = best_run.get_metrics()
+>```
+algorithm : ['XGBoostClassifier', 'LightGBM', 'LightGBM', 'XGBoostClassifier', 'XGBoostClassifier']
+
+
 
 ### Pipeline comparison
 
