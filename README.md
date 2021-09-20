@@ -93,6 +93,11 @@ Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all 
 >                        tags={'Training context':'Hyperdrive'},
 >                        properties={'Accuracy': best_run_metrics['Accuracy']})
 
+### Scikit-learn with HyperDrive Result
+![png](img/hyperdrive-result.png)
+Best performance is `C` = 1.2955722626880386 and `max_iter` = 100 with accuracy = 0.91002
+
+
 
 ### AutoML
 
