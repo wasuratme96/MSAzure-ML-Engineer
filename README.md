@@ -12,21 +12,86 @@ The best performing model is a `VotingEnssemble` from AutoML Pipeline with accur
 
 ## ML Pipeline
 ### Scikit-learn Pipeline with HyperDrive
+![png](img/scikit-learn-hyper.png)
 #### Pipeline Architecture
-On Scikit-lean pipeline, it will compose with python script (`train.py`) to handle all the data preprocessing and training Logistic Regression Model from Scikit-Learn. Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all the process with Azure ML environment via Azure SDK. 
+On Scikit-lean pipeline, it will compose with python script (`train.py`) to handle all the data preprocessing and training Logistic Regression Model from Scikit-Learn.  
 
--> Starting from connect to the **Workspace** 
+Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all the process with Azure ML environment via Azure SDK. 
 
--> create **ComputeTarget** 
+> * Starting from connect to the **Workspace** 
+>  ```python
+> ws = Workspace.get(name="udacity-project", 
+>                   subscription_id= '590fde7b-1b27-4bfd-a40b-08d9385aa863',
+>                   resource_group= 'ml-eng-azure')
+> exp = Experiment(workspace=ws, name="udacity-project")
+> ```
+> * Create **ComputeTarget** 
+> ```python
+>cpu_cluster_name = 'mlcpucluster'
+>compute_config = AmlCompute.provisioning_configuration(vm_size = 'STANDARD_D2_V2',
+>                                                            max_nodes = 4)
+>cpu_cluster = ComputeTarget.create(ws, cpu_cluster_name, compute_config)
+>```
+> * Config **Environment** for python script 
+> ```python
+>%%writefile hyperdrive_env.yml
+>name: sklearn_hyperdrive_env
+>dependencies:
+>- python=3.6.2
+>- scikit-learn
+>- pandas
+>- numpy
+>- pip
+>- pip:
+>  - azureml-defaults
+>```
+> * Establish and config **Hyperparameter Tuning** with **HyperDrive**
+> 
+> `RandomParameterSampling` is selected with 2 hyperparamter for searching (`C` and `max_iter`)
+> ```python
+> # Paramter for tuning
+>ps = RandomParameterSampling(
+>    {
+>        '--C' : uniform(0.1, 2.0),
+>        '--max_iter' : choice(20, 50, 70, 100, 120, 150, 170, 200, 220, 250 , 270 ,300)
+>    }
+>)
+>
+># Early Stopping Policy
+>policy = BanditPolicy(slack_factor = 0.1, evaluation_interval = 1, delay_evaluation = 5)
+>
+>```
+> * Connect training script with `ScriptRunConfig` and establish `HyperDrive`
+> ```python
+> # Swith to use ScriptRunConfig instead of SKLearn due to deprecate
+>est = ScriptRunConfig(source_directory = os.getcwd(),
+>                     script = 'train.py',
+>                     compute_target = cpu_cluster,
+>                     environment = hyper_env)
+>
+># Create a HyperDriveConfig using the estimator, hyperparameter sampler, and policy.
+>hyperdrive_config = HyperDriveConfig(run_config = est,
+>                                    hyperparameter_sampling = ps,
+>                                    policy = policy,
+>                                    primary_metric_name = 'Accuracy',
+>                                    primary_metric_goal = PrimaryMetricGoal.MAXIMIZE,
+>                                    max_total_runs = 40,
+>                                    max_concurrent_runs = 4)
+>```
 
--> config **Environment** for python script 
-
--> establish and config **Hyperparameter Tuning** with **HyperDrive** 
-
--> submit **Experiment** to Azure ML 
-
--> register best model.
-
+> * Submit **Experiment** to Azure ML 
+> ```python
+> experiment = Experiment(workspace = ws, name = 'bank-market-binary-hyperdrive_final')
+>run = experiment.submit(config = hyperdrive_config)
+>```
+> * Register best model.
+> ```python
+> best_run = run.get_best_run_by_primary_metric()
+>best_run_metrics = best_run.get_metrics()
+>script_arguments = best_run.get_details()['runDefinition']['arguments']
+>best_run.register_model(model_path='outputs/LogisBinaryModel.pkl', model_name='bankmarketing_model',
+>                        tags={'Training context':'Hyperdrive'},
+>                        properties={'Accuracy': best_run_metrics['Accuracy']})
 
 
 ### AutoML
