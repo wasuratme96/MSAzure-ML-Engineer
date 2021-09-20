@@ -129,14 +129,74 @@ After complete clean data (import function from `train.py`) and split data for t
 >best_run, fitted_model = automl_run.get_output()
 >best_run_metrics = best_run.get_metrics()
 >```
-algorithm : ['XGBoostClassifier', 'LightGBM', 'LightGBM', 'XGBoostClassifier', 'XGBoostClassifier']
+### AutoML Result
+The best run from AutoML is `VotingEnsemble` from combination of 5 paring pipeline-algorithm. Accuracy is **0.91549**
+>```python
+>algorithm = {1 : 'StandardScalerWrapper : XGBoostClassifier', 
+>             2 : 'MaxAbsScaler : LightGBM', 
+>             3 : 'MaxAbsScaler : LightGBM', 
+>             4 : 'MaxAbsScaler : XGBoostClassifier',
+>             5 : 'SpareNormalizer : XGBoostClassifier'}
+>```
+And coefficient on each algoritm on voting is following order.
+>```python
+> { 1 : 0.125, 2 : 0.125, 3 : 0.25, 4 : 0.25, 5 : 0.25 } 
+>```
+Example of hyperparameter setting from AutoML Voting Ensemble
+>```python
+>{
+>    "class_name": "LightGBMClassifier",
+>    "module": "automl.client.core.common.model_wrappers",
+>    "param_args": [],
+>    "param_kwargs": {
+>        "boosting_type": "gbdt",
+>        "colsample_bytree": 0.6933333333333332,
+>        "learning_rate": 0.09473736842105263,
+>        "max_bin": 110,
+>        "max_depth": 8,
+>        "min_child_weight": 6,
+>        "min_data_in_leaf": 0.003457931034482759,
+>        "min_split_gain": 1,
+>        "n_estimators": 25,
+>        "num_leaves": 227,
+>        "reg_alpha": 0.9473684210526315,
+>        "reg_lambda": 0.42105263157894735,
+>        "subsample": 0.49526315789473685
+>    },
+>    "prepared_kwargs": {},
+>    "spec_class": "sklearn"
+>}
+>``` 
+## Pipeline comparison
+### Scikit-Learn with HyperDrive
+### * Overall Result
+![png](img/azureml-hyperdrive-result-overall.png)
+### * Pipeline Performance
+![png](img/azureml-metrics-hyperdrive.png)
 
+With this pipeline, to create the machine learning it require to use custom script (`train.py`) with defined environment to interface with Azure SDK <br>
+This give a lot more flexible but add more on time consume and complexity. Final accuracy is **0.91002** <br>
 
+On metrics summary page in AzureML Studio, only pre-define metrics in script have been collected and logged with no model explainability.
 
-### Pipeline comparison
+### AutoML
+### * Overall Result
+![png](img/azureml-automl-result-overall.png)
+### * Pipeline Performance
+![png](img/azureml-metrics-automl.png)
+### * Model Explainer
+![png](img/azureml-explainer-automl.png)
+In AutoML pipeline, setup is shorthen by creating AutoML configuration and submit the experiment to AzureML.
+Final accuracy is **0.91549**. with built-in model explainability and customizable metrics.
+
+The accuracy might not much difference with the Scikit-Learn HyperDrive Pipeline but less complexity in setup is benefit with AutoML.
+We can spend more time on cleaning data and find the insight from model with model explainability module in AzureML Studio.
+
 
 ## Future Work
-
+1.) Deep drive into data preprocessing by using model explainability module from AutoML(cleaning, feature engineering and feature selection)
+2.) For Scikit-Learn pipeline, use more complex model and number of hyperparameter to be tunned together with difference searching method `BayesianParameterSampling`. Early stopping policy also can be try with difference strategy.
+3.) Test both model pipeline on unseen data.
 ## Reference
 
 ### Initial code
