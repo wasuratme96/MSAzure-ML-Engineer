@@ -10,6 +10,44 @@ So, we want to use these historical data features to predict whether bank term d
 
 The best performing model is a `VotingEnssemble` from AutoML Pipeline with accuracy = **0.91549** comparing with **0.91002** in accuracy from `Scikit Learn-Logisitc Regression with HyperDrive`
 
+## Data Set
+The problem statement on this data set is to predict whether customer will accept `('yes')` or `('no')` in subscription.<br>
+So, this problem is `Binary Classification` by using all past behaviour of response to marketing on campaign together with profile of customer (ex. `age`, `education`) and social and economic index during that period of campaign to predict subscription acceptance. 
+
+There are total 20 features + 1 target columns in the data set which can be seperated in to 3 groups<br>
+1.) *Client Features*
+- *age* 
+- *job* (Type of jobs ex. services, management, housemaid)
+- *marital* (ex. married, single)
+- *education* (ex. university.degreed, basic.4y)
+- *default* (Has credit in default ? yes vs no)
+- *housing* (Has housing loan ? yes vs no)
+- *loan* (Has persoanl loan ? yes vs no)
+
+2.) *Campaign Features - Current*
+- *contact* (Communication type ex. cellular and telephone)
+- *month* (Last contact month of year)
+- *day_of_week* (Last contact day of week)
+- *duration* (Contact duration in seconds in last call)
+- *campaign* (Contacts times during this campaign)
+
+3.) *Campaign Features - Previous Campaign*
+- *pbdays* (Number of passed days passed after customer was last contacted on previous campaign)
+- *poutcome* (Outcome of the previous marketing campaign: 'failure','nonexistent','success')
+- *previous* (Number of contacts time before this campaign)
+
+4.) *Social & Economics Features*
+- *emp.var.rate* (Employment variation rate)
+- *cons.price.idx* (Consumer price index)
+- *cons.conf.idx* (Consumer confidence index)
+- *euribor3m*  (Euribor 3 month rate)
+- *nr.employed* (Number of employees)
+
+5.) *Output Feature*
+- *y* (Has customer subscribe a term deposit ? yes vs no)
+
+Preprocessing with encode categorical data with binary value to be `1` and `0`, other will be encoded by onehot encoder.
+
 ## ML Pipeline
 ### Scikit-learn Pipeline with HyperDrive
 ![png](img/scikit-learn-hyper.png)
@@ -48,10 +86,19 @@ Then Jupyter Notebook (`udacity-project.ipynb`) will be used to orchestrate all 
 > * Establish and config **Hyperparameter Tuning** with **HyperDrive**
 > 
 > `RandomParameterSampling` is selected with 2 hyperparamter for searching (`C` and `max_iter`) <br>
+> * **Search Method** <br>
+> 
 >Benefit of `RandomParameterSampling` on HyperDrive is it support both discrete (`choice`) and continuous (many statictic functions) set of hyperparameters. Together with `EarlyStopping` policy that can select by user. <br>
 >
 > This make the `RandomParameterSampling` have flexible in setting, moderate to low time consume of hyper parameter tuning and good for discovery the group of hypermeters. (Mostly requires additional number of time to run) <br>
+>
+> * **Hyperparameters** <br>
 > 
+> `C`  is inverse of regularization parameter which retains the strengh of each features. Higher `C` mean "trust the training data alot", lower `C` mean we want to regularize it "the training data might not represent the real world data set"
+>  
+> `max_iter` is maximum number of iterarions to converge. It is nuymber of times model will learn and adjust the parameters.
+> 
+> * **Early Stopping Policy** <br>
 > `EarlyStopping` policy is slected to be `BanditPolicy` <br>
 > This policy can stop an iteration if the selected performance metric under performs comparing with the best run by specified margin which is `slack_factor`. With this character, it can save time when we perform large hyperparameter search space.
 > 
@@ -208,7 +255,7 @@ We can spend more time on cleaning data and find the insight from model with mod
 
 ## Clear Cluster after use
 ![png](img/cluster-delete.png)
-Delete cluster via UI on Azure Machine Learning Studio
+Delete cluster via UI on Azure Machine Learning Studio to prevent additional cost when do not in use.
 
 ## Reference
 
