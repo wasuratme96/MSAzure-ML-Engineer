@@ -1,12 +1,22 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
+# Operationalizing Machine Learning on Azure
+
+## Overview
+This is 2nd project from Udacity - Machine Learning Engineering with Azure.<br/>
+In this project, ```AutoML``` from Azure have been used to train and find the model then deploy it to the endpoints for consume.<br/>
+Endpoints status have been tracked by ```Applications Insight service``` from Azure and ```Swagger``` is used for API documentations. After that all of these process have been created as a publish pipeline on Azure ML Studio
+
+Below is simple workflow for this project.
+![workflow](img/operationalize-step-of-work.png)
+**Credit :Udacity**
+
+## Step 1 : Authentication
+`az cli` is used to log in to the `Azure ML Studio` and Service Pricipal have been created to access the project workspace. Below is shown the Service Pricipal list in my Azure ML workspace.
+
+![png](img/AutoMLExperiment/service-pricipal-creation.png)
 
 
-# Your Project Title Here
-
-*TODO:* Write an overview to your project.
-
-## Architectural Diagram
-*TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
+## Step 2 : AutoML Model Training
+This step AutoML from Azure use to train classification models on this [Bank Marketing UCI Data](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) and present the trained models in descending order of **AUC weighted accuracy**.
 
 ## Key Steps
 *TODO*: Write a short discription of the key steps. Remeber to include all the screenshots required to demonstrate key steps. 
