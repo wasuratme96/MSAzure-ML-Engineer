@@ -13,3 +13,15 @@ Both of pipeline will be compared and tracked on AzureML Studio.
 >To predict will customer subscribe the bank deposit program or not ? (Yes vs. No.) <br>
 > * **Model Type** <br>
 >Binary Classification
+
+
+## Project 2 - [Operationalizing ML on azure]()
+![png](img/operationalize-architec.png)
+This project focus on operationalzation machine learning process on Azure Machine Learning. Starting from model development to create the pipeline of model and monitoring the status of deployed endpoints.
+
+> * **Dataset** <br>
+>Bank Marketing from [UCI-ML Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
+> * **Problem Statement** <br>
+>To predict will customer subscribe the bank deposit program or not ? (Yes vs. No.) <br>
+> * **Tool Inuse** <br>
+> Azure Python SDK, Application Insight, Azure container instance, AutoML, Swagger and Apache Benchmark
