@@ -22,7 +22,7 @@ Below is simple workflow for this project.
 >### Step 4 : Enable application insight and make API documentation.
 >Use 'az cli' to enable application insight (tracking reposnse >time, number of request etc.) loging and status of endpoints >can be monitored from Azure Application Insight Service.
 
->### Step 5 : Consume Model Endpoints (Testing)
+>### Step 5 : Consume Model Endpoint (Testing)
 >Use 'az cli' to make the request to endpoint via HTTP post >request and recieve the reponse from the endpoint. Data for >testing on consume endpoints also saved at ```data.json```
 
 >### Step 6 : Create and Publish Pipeline
@@ -222,7 +222,8 @@ To make the local host for swagger stagging. `swagger.sh` and `serve.py` is need
 The HTTP API methods and responses for deployed model are as in the picture.
 ![swagger-api](img/Swagger/swagger-api-example.png)
 
-## 5.) Consume Model Endpoints (Testing)
+## 5.) Consume Model Endpoint (Testing)
+### 5.2) Consume endpoint
 To consumne the model we can use HTTP post request to the endpoint by specify the model uri (`scorint_url`) and autheticate key(`key`) from Azure Machine Learning Studio. 
 ![endpoint](img/ConsumeEndpoint/model-endpoint-azureml.png)
 
@@ -307,7 +308,7 @@ print(resp.json())
 After execute the `endpoint.py` prediction results of 2 example data are shown as below
 ![predicted_result](img/ConsumeEndpoint/endpoints-example.png)
 
-### 3.6) Endpoint Benchmarking by Apache Benchmark
+### 5.2) Endpoint Benchmarking by Apache Benchmark
 After we ensure that model endpoint can be requested, benchmarking on the endpoint will be performed by using [Apache Benchmarking](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
 `benchmark.sh` will be use to run for benchmarking which need to speficify model uri (`scorint_url`) and autheticate key(`key`)
@@ -320,3 +321,72 @@ Afte executed, result woul be shown as below picture.
 ![benchmark](img/ConsumeEndpoint/benchmarking.png)
 You can see the this script perform 10 request to endpoints and zero fail requests is achieved and average of response time per request is 193.613 ms. By the ways, this test have been conducted in closed environment. When make use the endpoint in real-application environment. Response time per request can be expected to slower than this. 
 
+## 6.) Create and Publish Pipeline
+In final part, to make the whole process be able to rerun base on condition or scheduled we will create the pipeline object in Azure Machine Learning Studio and publish as `RESTEndpoint` to make it be able to interact (HTTP Trigger) from other serivces.
+
+### 6.1) Pipeline Creation
+To create pipeline, we use `Python Azure SDK` as below.
+Where `pipeline_run` is completed pipeline running from AutoML  experiment section (We can seperate the AutoML experiment into specific python script but here we use the best model that got from the 1st run of completed pipeline)
+```python
+published_pipeline = pipeline_run.publish_pipeline(
+    name="Bankmarketing Train", description="Training bankmarketing pipeline", version="1.0")
+```
+After published, `Pipeline endpoints` will shown up in Azure Machine Learning Studio on `Pipeline` menu.
+![pipeline-deployment](img/PipelineDeployment/pipeline-initial-deployment.png)
+
+We can get REST endpoints when click into the deployed pipeline.
+![pipeline-endpoint](img/PipelineDeployment/pipeline-endpoint.png)
+
+### 6.2) Make POST request to pipeline endpoint
+Same as best model endpoint, we can send the HTTP POST request to trigger the pipeline to run by using python script below.
+
+This time, due to I use the Jupyter-notebook in Azure Machine Learning Studio. To make the Authenitcationm we can function from `azureml.core.authentication`
+
+```python
+import requests
+from azureml.core.authentication import InteractiveLoginAuthentication
+
+interactive_auth = InteractiveLoginAuthentication()
+auth_header = interactive_auth.get_authentication_header()
+
+rest_endpoint = published_pipeline.endpoint
+response = requests.post(rest_endpoint, 
+                         headers=auth_header, 
+                         json={"ExperimentName": "pipeline-rest-endpoint"}
+                        )
+```
+When make the request, experiment of pipeline will be create and running status will be shown as belows from Jupter-Notebook in Azure Machine Learning Studio.
+
+![pipeline-status-sdk](img/PipelineDeployment/pipeline-run-notbooksdk.png)
+And we also can check the running status from the Azure Machine Learning Studio.
+![pipeline-status-amlstudio](img/PipelineDeployment/pipeline-endpoints-completed.png)
+
+(Ps. Due to their are nothings change in the pipeline and I have set AutoMLStep to allow reuse, so running status after make the request will change to completed immediately)
+>```python
+>automl_step = AutoMLStep(
+>    name='automl_module',
+>    automl_config=automl_config,
+>    outputs=[metrics_data, model_data],
+>    allow_reuse=True)
+>```
+
+# Future Improvement
+- Add cleaning data step in pipeline to make data cleaner.
+- Fine tune AutoML by using explanabilit function to explore the feature importance.
+- Add model validation step in pipeline to prevent model over -fitting and under-ftting
+- Seperate the process/ task in pipeline that can be parallel.
+- 
+# ScreenCast
+Below is screencst the entire process of working with Machine Learning Application that completed within this project.
+<a href="youtube_url" target="_blank"><img src=".jpg"
+alt="Operationalizing ML on Azure Project" width="240" height="180" border="10" /></a>
+
+# Citations
+[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos
+)
+
+[Create Sevice Principal](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli)
+
+[Machine Learning Pipeline](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/machine-learning-pipelines-advanced/tutorial-pipeline-batch-scoring-classification.ipynb)
+
+[Publish ML Pipeline](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-pipelines#publish-a-pipeline)
