@@ -14,7 +14,7 @@ Below is simple workflow for this project.
 >`az cli` is used to log in to the `Azure ML Studio` and >Service Pricipal have been created to access the project >workspace.
 
 >### Step 2 : AutoML Model Training
->This step AutoML from Azure use to train classification models >on [Bank Marketing UCI Data](https://automlsamplenotebookdata.>blob.core.windows.net/automl-sample-notebook-data/>bankmarketing_train.csv) and set the target performance >metrics to be **AUC weighted accuracy**. 
+>This step AutoML from Azure use to train classification models on [Bank Marketing UCI Data](https://automlsamplenotebookdata.>blob.core.windows.net/automl-sample-notebook-data/>bankmarketing_train.csv) and set the target performance metrics to be **AUC weighted accuracy**. 
 
 >### Step 3 : Deploy best model performance
 >After complete AutoML process, best performer will be deployed >via Azure ML Studio with Azure Container Instance compute >type. Model endpoints will be generated.
@@ -378,7 +378,7 @@ And we also can check the running status from the Azure Machine Learning Studio.
 - 
 # ScreenCast
 Below is screencst the entire process of working with Machine Learning Application that completed within this project.
-<a href="youtube_url" target="_blank"><img src=".jpg"
+<a href="https://youtu.be/7G9dQ-RzDvY" target="_blank"><img src="img/screencast-cover.png"
 alt="Operationalizing ML on Azure Project" width="240" height="180" border="10" /></a>
 
 # Citations
