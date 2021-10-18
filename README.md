@@ -26,10 +26,27 @@ This project focus on operationalzation machine learning process on Azure Machin
 > * **Tool Inuse** <br>
 > Azure Python SDK, Application Insight, Azure container instance, AutoML, Swagger and Apache Benchmark
 
-## Project 3 - [Google Brain - Ventilator Pressure Prediction](xxxxxxxxxxxx)
-![diagram](img/Ventilator-diagram.svg)
+## Project 3 - [IEEE-CIS Fraud Detection](xxxxxxxxxxxx)
+![ml-ops-diagram](img/fraud-diagram.png)
 
-The ventilator data used in this competition was produced using a modified [open-source ventilator](https://www.peoplesvent.org/en/latest/) connected to an [artificial bellows](https://www.ingmarmed.com/product/quicklung/) test lung via a respiratory circuit. The diagram below illustrates the setup, with the two control inputs highlighted in green and the state variable (airway pressure) to predict in blue. The first control input is a continuous variable from 0 to 100 representing the percentage the inspiratory solenoid valve is open to let air into the lung (i.e., 0 is completely closed and no air is let in and 100 is completely open). The second control input is a binary variable representing whether the exploratory valve is open (1) or closed (0) to let air out.
 
-In this competition, participants are given numerous time series of breaths and will learn to predict the airway pressure in the respiratory circuit during the breath, given the time series of control inputs.
+In this project we will predict the probability of online transation is fradulent.
+
+The data comes from Vesta's real-world e-commerce transactions and contains a wide range of features from device type to product features. You also have the opportunity to create new features to improve your results.
+
+
+*Acknowledgements:*
+
+![vesta](img/vesta-logo.png)
+
+> * **Dataset** <br>
+>Vesta Transactional Data ([Kaggle](https://www.kaggle.com/c/ieee-fraud-detection/data))
+> * **Problem Statement** <br>
+>To predict probability of fradulent on each transactional ID.
+>*Binary Classification* 
+> * **Scoring Metrics** <br>
+>Area Under the Curve (AUC)
+>*Binary Classification*
+> * **Tool Inuse** <br>
+> Azure Python SDK, Application Insight, Azure container instance, AutoML, Swagger and Apache Benchmark, HyperDrive for Tuning.
 
