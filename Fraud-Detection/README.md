@@ -1,14 +1,41 @@
 # IEEE-CIS Fraud Detection
 
-*TODO:* Write a short introduction to your project.
+## Project Overview
+This dataset come from one of the kaggle competition which is [IEEE-CIS Fraud Detection](https://www.kaggle.com/c/ieee-fraud-detection)
 
-## Azure Machine Learning Workspace
+The data comes from Vesta's real-world e-commerce transactions and contains a wide range of features from device type to product features. You also have the opportunity to create new features to improve your results.
+
+The goal is to create & deploy machine learning to classify which transaction is fraudulent
+
+### Steps of Work
+1. Setup Azure ML workspace (Data Registry, Compute Instance, Compute Cluster)
+2. Create data pipeline for data preprocessing.
+3. 
+
+## 1.) Azure Machine Learning Workspace
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
 
-## Dataset
+## 2.) Dataset
 
-### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+From this dataset we will predict the probability that an online transaction is fraudulent, as denoted by the binary target `isFraud`.
+
+The data is broken into two files `identity` and `transaction`, which are joined by `TransactionID`. Not all transactions have corresponding identity information.
+
+### Categorical Features - Transaction
+- ProductCD
+- card1 - card6
+- addr1, addr2
+- P_emaildomain
+- R_emaildomain
+- M1 - M9
+
+### Categorical Features - Identity
+- DeviceType
+- DeviceInfo
+- id_12 - id_38
+
+The `TransactionDT` feature is a timedelta from a given reference datetime (not an actual timestamp).
+
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
