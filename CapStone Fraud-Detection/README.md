@@ -51,7 +51,7 @@ Then upload all of these file into your notebook working space in Azure Machine 
 2. Create data pipeline for data preprocessing.
 3. Create **AutoML** Experiment, Submit, Register Model.
 4. Create **Customer Script** Experiment, Submit, Register Model.
-5. Select the best model for model deployment.
+5. Model Performance Benchmarking and Deployment.
 6. Endpoints request testing.
 
 ## 1.) Azure Machine Learning Workspace
@@ -372,7 +372,9 @@ When summit the experiment, pipeline running status can be tracked. (Below is ex
 
 ### LGBM with Hyperdrive :: Results
 Best set of hyperparamer can be retrieve both via Azure SDK and Azure ML Studio. <br>
+**Azure ML Studio**
 ![lgbmresult_ui](img/pipeline_hyperdrive/hyperdrive_results_ui.png)
+**Azure SDK**
 ![lgbmresult_sdk](img/pipeline_hyperdrive/hyperdrive_results_widget.png)
 Highest `AUC` is **0.93205** and at the best run hyperparameter is as below record.
 ```python
@@ -386,7 +388,11 @@ Highest `AUC` is **0.93205** and at the best run hyperparameter is as below reco
 ```
 ![lgbmresult_sdk](img/pipeline_hyperdrive/hyperdrive_bestrun.png)
 
-To improve the results in term of modelling, 
+To improve the results in term of modelling, we might consider these items.
+- Increase number of `max_total_runs` from 100 to higher number (~500 - 1000)
+- Details search in area of good performance hyperparameters by using `GridParameterSampling`
+
+
 
 ### LGBM Hyperdrive :: Register Model
 We will use Azure SDK to register the best model. <br>
@@ -394,10 +400,31 @@ We will use Azure SDK to register the best model. <br>
 ```python
 best_run = hd_run.get_best_run_by_primary_metric()
 ```
-![lgbmresult_sdk](img/pipeline_hyperdrive/lgbm_bestmodel_deploy.png)
+![lgbmresult_modelregis](img/pipeline_hyperdrive/lgbm_bestmodel_deploy.png)
 
-## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+## 5.) Model Benchmarking and Model Deployment.
+**Performance Comparing**
+- `AUC` AutoML = **0.93668**
+- `AUC` LGBM + Hyperdrive =  **0.93205** 
+
+**Training Time** (with iterations number) 
+- 10 Iterations with **1h 16m 50s**
+- 100 Iterations with **2h 55m 56s**
+
+Best on above 2 dimensions, AutoML seem to out perform interm of performance and training time. Also ease of complex configuration. AutoML can start to use with new data without customer_script.
+
+And moreover model explanability can be use to investigate the impact of each features on model performance. So final model to deploy will be **Automated ML from Azure**
+![modelexplain1](img/comparing/automl_explanation.png)
+![modelexplain2](img/comparing/automl_explanation_2.png)
+
+
+## 6.) Model Deployment
+To deploy trained AutoML, both method from Azure ML Studio and Azure SDK can be selected.
+Below is example of using Azure SDK.
+
+
+
+
 
 ## Screen Recording
 - A working model
