@@ -485,6 +485,10 @@ The result of make request can be found as below picture.
 
 I also upload the testing script in the folder `endpoint_testing` by read in th test file from source data then you play around within
 
+In the end it would be best pratice to clean up service when complete the project.
+Below is example of how we can use Azure ML SDK to delete unuse serive.
+![aci_clean_up](img/aci_web_delete.png)
+
 ## **Application Insight on Endpoints
 To track and monitor request status of deployed endpoint, use Azure Application Insight to collect the follow data from an endpoints:
 - Output Data
@@ -534,10 +538,16 @@ Place this file in the same directory as `swagger.sh` and `serve.py`. Run it con
 ![swagger_url](img/model_deployment/swagger_ui.png)
 
 # Screen Cast
+Below is screencst the entire process of working with Machine Learning Application that completed within this project.
 
+<a href="https://youtu.be/dvmvMB0QDzg" target="_blank"><img src="img/screen_cast.png"
+alt="Fraud Detection - Capstone Project" width="240" height="180" border="10" /></a>
 
 # Further work for improvement
-
+- Use featurization on automl module without customer feature engineering code and comparing the performance.
+- From above item, add additional finding from model explainability from AutoML to improve custom feature engineering script.
+- Publish pipeline endpoints for both fore reusable when have to re-run on upcoming data in the future.
+- Increate all iteration on both pipeline (LGBM and AutoML)
 
 # Ciatations and Reference
 [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos
@@ -550,3 +560,7 @@ Place this file in the same directory as `swagger.sh` and `serve.py`. Run it con
 [Everythings about Pipeline](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines) 
 
 [Hyperdrive Tuning](https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb)
+
+[ACI Web Service Class](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-)
+
+[Model Registration](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-cloud/model-register-and-deploy.ipynb)

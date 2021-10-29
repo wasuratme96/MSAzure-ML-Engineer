@@ -26,8 +26,8 @@ This project focus on operationalzation machine learning process on Azure Machin
 > * **Tool Inuse** <br>
 > Azure Python SDK, Application Insight, Azure container instance, AutoML, Swagger and Apache Benchmark
 
-## Project 3 - [IEEE-CIS Fraud Detection](xxxxxxxxxxxx)
-![ml-ops-diagram](img/fraud-diagram.png)
+## Project 3 - [IEEE-CIS Fraud Detection](https://github.com/wasuratme96/MSAzure-ML-Engineer/tree/main/CapStone%20Fraud-Detection)
+![ml-ops-diagram](img/pipeline_architec.png)
 
 
 In this project we will predict the probability of online transation is fradulent.
