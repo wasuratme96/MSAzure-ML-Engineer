@@ -418,18 +418,135 @@ And moreover model explanability can be use to investigate the impact of each fe
 ![modelexplain2](img/comparing/automl_explanation_2.png)
 
 
-## 6.) Model Deployment
+## 6.) Model Deployment and Endpoint Testing
 To deploy trained AutoML, both method from Azure ML Studio and Azure SDK can be selected.
 Below is example of using Azure SDK.
 
+What you need is type of deployement, scoring script, and ACIWebService Spec.
+```python
+script_file_name = "inference/score.py"
+best_run.download_file("outputs/scoring_file_v_1_0_0.py", "inference/score.py")
+
+inference_config = InferenceConfig(entry_script=script_file_name)
+
+aciconfig = AciWebservice.deploy_configuration(
+    cpu_cores=2,
+    memory_gb=2,
+    tags={"area": "IEEE_CIS_FraudData", "type": "automl_classification"},
+    description="Deployed Automl for Fraud Detection",
+    auth_enabled=True
+)
+```
+![automl_deployment](img/model_deployment/automl_deploy_sdk.png)
+
+After completed deploy progress, we can go to check endpoint on Azure ML Studio as below. 
+![automl_endpoint](img/model_deployment/automl_deployed.png)
+And endpoint URL is as below.
+
+![automl_url](img/model_deployment/automl_endpoints.png)
+
+To test the endpoints, we will make HTTP post request by using below script.
+
+What this code do is use endpoint URI and authentication key to point to our deployed model.
+
+Then we need to have all data in same format as we trained our model and convert it to json format to make the request.
+
+```python
+import requests
+import json
+
+# URL for the web service, should be similar to:
+# 'http://8530a665-66f3-49c8-a953-b82a2d312917.eastus.azurecontainer.io/score'
+scoring_uri = 'http://994b56db-a2b8-4245-8e72-08a134c0caec.southeastasia.azurecontainer.io/score'
+
+# If the service is authenticated, set the key or token
+key = '9YQOFsffryPke3pFVp7qWZKA2LZXdm1A'
+
+data = {"Example of single record is in endpoint_testing.py"}
+
+# Convert to JSON string
+input_data = json.dumps(data)
+with open("data.json", "w") as _f:
+    _f.write(input_data)
+
+# Set the content type
+headers = {'Content-Type': 'application/json'}
+# If authentication is enabled, set the authorization header
+headers['Authorization'] = f'Bearer {key}'
+
+# Make the request and display the response
+resp = requests.post(scoring_uri, input_data, headers=headers)
+print(resp.json())
+
+```
+
+The result of make request can be found as below picture.
+![endpoint_result](img/model_deployment/make_request_result.png)
+
+I also upload the testing script in the folder `endpoint_testing` by read in th test file from source data then you play around within
+
+## **Application Insight on Endpoints
+To track and monitor request status of deployed endpoint, use Azure Application Insight to collect the follow data from an endpoints:
+- Output Data
+- Responses
+- Request rates, response times, and failure rates
+- Dependency rates, response times, and failure rates
+- Exceptions
+
+Script to enable this function is in `log.py` which contains as below script.
+What you need Azure Workspace config file and name of deployed endpoints.<br>
+
+```python
+from azureml.core import Workspace
+from azureml.core.webservice import Webservice
+
+# Requires the config to be downloaded first to the current working directory
+ws = Workspace.from_config()
+
+# Set with the deployment name
+name = "automlfrauddetection"
+
+# load existing web service
+service = Webservice(name=name, workspace=ws)
+service.update(enable_app_insights = True)
+
+logs = service.get_logs()
+
+for line in logs.split('\n'):
+    print(line)
+```
+
+After complie this code, you can go back to check the application insight enable in the deployed model.
+![appinsight](img/model_deployment/application_insight.png)
+
+When click on application insight menu, monitoring dashboard is shown as below. THis dashboard can monitor all of items mentioned in above list.
+![appinsight_ui](img/model_deployment/app_insight.png)
 
 
+## **Swagger UI
+Swagger helps to build, document and consume RESTful web service.
+Azure provides a swagger.json that is used to create a web site that documents the HTTP endpoint for a deployed model.
+
+You can download the `swagger.json` from deployed model on Azure ML Studio on Swagger URI.
+![swagger_url](img/model_deployment/swagger_url.png)
+
+Place this file in the same directory as `swagger.sh` and `serve.py`. Run it consequently to deploy Swagger UI on local port. Result will be as below. (`swagger.sh` require docker to be run on your machine)
+![swagger_url](img/model_deployment/swagger_ui.png)
+
+# Screen Cast
 
 
-## Screen Recording
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+# Further work for improvement
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+
+# Ciatations and Reference
+[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos
+)
+
+[Request on AutoML Endpoint](https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb)
+
+[Create Real Time Endpoints](https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb)
+
+[Everythings about Pipeline](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines) 
+
+[Hyperdrive Tuning](https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb)

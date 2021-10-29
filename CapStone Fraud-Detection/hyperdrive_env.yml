@@ -1,0 +1,10 @@
+name: batch_environment
+dependencies:
+- python=3.6.9
+- scikit-learn
+- pandas
+- numpy
+- lightgbm
+- pip
+- pip:
+  - azureml-defaults

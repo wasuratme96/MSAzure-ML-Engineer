@@ -1,0 +1,373 @@
+2021-10-23 11:17:37.374 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:17:37.418 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:17:37.427 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 11:17:37.579 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=151.7[ms]
+2021-10-23 11:17:37.634 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=216.3[ms]
+2021-10-23 11:17:37.634 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 11:17:42.752 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 11:17:42.767 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 11:17:42.785 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=5150.49[ms]
+2021-10-23 11:17:42.785 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=5411.57[ms]
+2021-10-23 11:17:53.615 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:17:53.634 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:17:53.654 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 11:17:53.782 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=127.73[ms]
+2021-10-23 11:17:53.833 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=198.97[ms]
+2021-10-23 11:17:53.834 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 11:17:54.601 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 11:17:54.602 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 11:17:54.612 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=778.42[ms]
+2021-10-23 11:17:54.613 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=997.51[ms]
+2021-10-23 11:23:01.604 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:23:01.626 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:23:01.644 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 11:23:01.783 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=139.44[ms]
+2021-10-23 11:23:01.841 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=215.27[ms]
+2021-10-23 11:23:01.842 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 11:23:02.567 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 11:23:02.568 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 11:23:02.576 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=734.68[ms]
+2021-10-23 11:23:02.577 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=972.2[ms]
+2021-10-23 11:23:29.835 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:23:29.851 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 11:23:29.873 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 11:23:30.094 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=221.9[ms]
+2021-10-23 11:23:30.147 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=296.59[ms]
+2021-10-23 11:23:30.148 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 11:23:31.008 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 11:23:31.010 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 11:23:31.018 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=870.55[ms]
+2021-10-23 11:23:31.019 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1183.78[ms]
+2021-10-23 12:30:38.192 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:30:38.213 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:30:38.233 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 12:30:38.429 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=196.47[ms]
+2021-10-23 12:30:38.483 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=270.36[ms]
+2021-10-23 12:30:38.484 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 12:30:39.282 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 12:30:39.283 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 12:30:39.292 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=808.6[ms]
+2021-10-23 12:30:39.293 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1100.93[ms]
+2021-10-23 12:43:44.771 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:43:44.798 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:43:44.832 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 12:43:45.027 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=195.45[ms]
+2021-10-23 12:43:45.091 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=292.76[ms]
+2021-10-23 12:43:45.091 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 12:43:45.884 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 12:43:45.886 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 12:43:45.895 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=803.41[ms]
+2021-10-23 12:43:45.895 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1123.9[ms]
+2021-10-23 12:57:43.254 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:57:43.278 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:57:43.297 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 12:57:43.422 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=125.0[ms]
+2021-10-23 12:57:43.476 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=197.35[ms]
+2021-10-23 12:57:43.476 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 12:57:44.759 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 12:57:44.760 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 12:57:44.771 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=1294.48[ms]
+2021-10-23 12:57:44.771 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1516.54[ms]
+2021-10-23 12:58:16.143 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:58:16.171 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 12:58:16.192 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 12:58:16.315 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=122.84[ms]
+2021-10-23 12:58:16.364 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=193.18[ms]
+2021-10-23 12:58:16.364 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 12:58:17.165 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 180, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-10-23 12:58:17.166 - WARNING - 3492 - azureml.train.automl._model_download_utilities._download_automl_model:101 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.34.1'. Please install 'azureml-train-automl-runtime==1.34.1' (e.g. `pip install azureml-train-automl-runtime==1.34.1`) and then rerun the previous command.
+2021-10-23 12:58:17.182 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=817.84[ms]
+2021-10-23 12:58:17.183 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1039.17[ms]
+2021-10-23 13:35:50.852 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 13:35:50.879 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-23 13:35:50.911 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 13:35:51.032 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=121.12[ms]
+2021-10-23 13:35:51.093 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=214.58[ms]
+2021-10-23 13:35:51.094 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-23 13:35:52.465 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ImportError
+Message: cannot import name 'SeasonalityExceedsSeries' from 'azureml.automl.core.shared._diagnostics.automl_error_definitions' (/anaconda/envs/azureml_py38/lib/python3.8/site-packages/azureml/automl/core/shared/_diagnostics/automl_error_definitions.py)
+Traceback:
+  File "_model_download_utilities.py", line 183, in _load_automl_model
+  File "model_wrappers.py", line 52, in <module>
+    from azureml.automl.runtime.shared import time_series_data_frame as tsdf
+  File "time_series_data_frame.py", line 46, in <module>
+    from azureml.automl.runtime.shared.forecasting_ts_utils import datetime_is_date
+  File "forecasting_ts_utils.py", line 13, in <module>
+    from azureml.automl.core.shared._diagnostics.automl_error_definitions import (
+
+ExceptionTarget: Unspecified
+2021-10-23 13:35:52.670 - CRITICAL - 3492 - azureml.train.automl._model_download_utilities.log_traceback:227 - Type: Unclassified
+Class: ImportError
+Message: cannot import name 'SeasonalityExceedsSeries' from 'azureml.automl.core.shared._diagnostics.automl_error_definitions' (/anaconda/envs/azureml_py38/lib/python3.8/site-packages/azureml/automl/core/shared/_diagnostics/automl_error_definitions.py)
+Traceback:
+  File "telemetry_activity_logger.py", line 58, in _log_activity
+    except Exception as e:
+  File "_model_download_utilities.py", line 91, in _download_automl_model
+  File "_model_download_utilities.py", line 183, in _load_automl_model
+  File "model_wrappers.py", line 52, in <module>
+    from azureml.automl.runtime.shared import time_series_data_frame as tsdf
+  File "time_series_data_frame.py", line 46, in <module>
+    from azureml.automl.runtime.shared.forecasting_ts_utils import datetime_is_date
+  File "forecasting_ts_utils.py", line 13, in <module>
+    from azureml.automl.core.shared._diagnostics.automl_error_definitions import (
+
+ExceptionTarget: Unspecified
+2021-10-23 13:35:52.670 - INFO - 3492 - azureml.train.automl._model_download_utilities._log_activity:89 - ActivityCompleted: Activity=DownloadModel, HowEnded=Failure, Duration=1576.2[ms]
+2021-10-23 13:35:52.671 - CRITICAL - 3492 - azureml.train.automl.run.log_traceback:227 - Type: Unclassified
+Class: ImportError
+Message: cannot import name 'SeasonalityExceedsSeries' from 'azureml.automl.core.shared._diagnostics.automl_error_definitions' (/anaconda/envs/azureml_py38/lib/python3.8/site-packages/azureml/automl/core/shared/_diagnostics/automl_error_definitions.py)
+Traceback:
+  File "telemetry_activity_logger.py", line 58, in _log_activity
+    except Exception as e:
+  File "run.py", line 719, in get_output
+  File "_model_download_utilities.py", line 91, in _download_automl_model
+  File "_model_download_utilities.py", line 183, in _load_automl_model
+  File "model_wrappers.py", line 52, in <module>
+    from azureml.automl.runtime.shared import time_series_data_frame as tsdf
+  File "time_series_data_frame.py", line 46, in <module>
+    from azureml.automl.runtime.shared.forecasting_ts_utils import datetime_is_date
+  File "forecasting_ts_utils.py", line 13, in <module>
+    from azureml.automl.core.shared._diagnostics.automl_error_definitions import (
+
+ExceptionTarget: Unspecified
+2021-10-23 13:35:52.671 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=1819.81[ms]
+2021-10-23 13:48:15.565 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetBestChild
+2021-10-23 13:48:15.602 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 13:48:15.741 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=139.79[ms]
+2021-10-23 13:48:15.795 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetBestChild, HowEnded=Success, Duration=229.57[ms]
+2021-10-23 13:55:39.881 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetBestChild
+2021-10-23 13:55:39.913 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 13:55:40.073 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=160.62[ms]
+2021-10-23 13:55:40.129 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetBestChild, HowEnded=Success, Duration=247.93[ms]
+2021-10-23 13:55:51.734 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetBestChild
+2021-10-23 13:55:51.777 - INFO - 3492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-23 13:55:51.936 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=158.89[ms]
+2021-10-23 13:55:51.992 - INFO - 3492 - azureml.train.automl.run._log_activity:89 - ActivityCompleted: Activity=GetBestChild, HowEnded=Success, Duration=258.16[ms]
+2021-10-24 05:03:29.737 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetBestChild
+2021-10-24 05:03:29.782 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 05:03:29.921 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=138.22[ms]
+2021-10-24 05:03:29.990 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetBestChild, HowEnded=Success, Duration=253.45[ms]
+2021-10-24 05:04:31.116 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 05:04:31.149 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 05:04:31.201 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 05:04:31.406 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=204.64[ms]
+2021-10-24 05:04:31.489 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=340.5[ms]
+2021-10-24 05:04:31.504 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-24 05:04:43.617 - INFO - 3597 - azureml.automl.runtime.distributed.utilities.horovod_initialized:70 - Horovod not found in current environment. Distribution via Horovod will be disabled.
+2021-10-24 05:04:48.461 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=16956.97[ms]
+2021-10-24 05:04:48.504 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=17388.03[ms]
+2021-10-24 05:05:40.788 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 05:05:40.843 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 05:05:40.873 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 05:05:41.083 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=209.68[ms]
+2021-10-24 05:05:41.156 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=312.9[ms]
+2021-10-24 05:05:41.162 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-24 05:05:41.897 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=735.1[ms]
+2021-10-24 05:05:41.921 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1132.39[ms]
+2021-10-24 07:16:18.774 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 07:16:18.840 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 07:16:18.870 - CRITICAL - 3597 - azureml.train.automl.run.log_traceback:227 - Type: ArgumentInvalid
+Class: OnnxConvertException
+Message: OnnxConvertException:
+	Message: Requested an ONNX compatible model but the run has ONNX compatibility disabled.
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Requested an ONNX compatible model but the run has ONNX compatibility disabled.",
+        "target": "onnx_compatible",
+        "inner_error": {
+            "code": "BadArgument",
+            "inner_error": {
+                "code": "ArgumentInvalid"
+            }
+        }
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 58, in _log_activity
+    yield
+  File "run.py", line 625, in _get_best_child_run
+    OnnxNotEnabled, target="onnx_compatible")
+
+ExceptionTarget: onnx_compatible
+2021-10-24 07:16:18.879 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=38.65[ms]
+2021-10-24 07:16:18.880 - CRITICAL - 3597 - azureml.train.automl.run.log_traceback:227 - Type: ArgumentInvalid
+Class: OnnxConvertException
+Message: OnnxConvertException:
+	Message: Requested an ONNX compatible model but the run has ONNX compatibility disabled.
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Requested an ONNX compatible model but the run has ONNX compatibility disabled.",
+        "target": "onnx_compatible",
+        "inner_error": {
+            "code": "BadArgument",
+            "inner_error": {
+                "code": "ArgumentInvalid"
+            }
+        }
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 58, in _log_activity
+    yield
+  File "run.py", line 713, in get_output
+    activity_name=automl_shared_constants.TelemetryConstants.GET_OUTPUT
+  File "run.py", line 625, in _get_best_child_run
+    OnnxNotEnabled, target="onnx_compatible")
+
+ExceptionTarget: onnx_compatible
+2021-10-24 07:16:18.880 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=105.68[ms]
+2021-10-24 07:17:47.512 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 07:17:47.537 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 07:17:47.559 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 07:17:47.718 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=159.41[ms]
+2021-10-24 07:17:47.792 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=255.73[ms]
+2021-10-24 07:17:47.799 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-24 07:17:48.773 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=973.74[ms]
+2021-10-24 07:17:48.779 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1267.04[ms]
+2021-10-24 07:55:12.050 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 07:55:12.082 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-24 07:55:12.105 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 07:55:12.452 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=347.19[ms]
+2021-10-24 07:55:12.584 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=502.32[ms]
+2021-10-24 07:55:12.590 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-24 07:55:14.249 - INFO - 3597 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=1659.04[ms]
+2021-10-24 07:55:14.254 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=2204.56[ms]
+2021-10-24 07:56:43.069 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-24 07:56:43.090 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 07:56:43.507 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=417.49[ms]
+2021-10-24 07:56:45.237 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=2168.1[ms]
+2021-10-24 07:56:50.052 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-24 07:56:50.074 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 07:56:51.397 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=1322.64[ms]
+2021-10-24 07:56:52.649 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=2596.38[ms]
+2021-10-24 08:00:43.561 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-24 08:00:43.576 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 08:00:43.746 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=170.03[ms]
+2021-10-24 08:00:44.739 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=1177.72[ms]
+2021-10-24 08:03:07.501 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-24 08:03:07.514 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 08:03:07.638 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=124.22[ms]
+2021-10-24 08:03:07.696 - CRITICAL - 3597 - azureml.train.automl.run.log_traceback:227 - Type: Unclassified
+Class: WebserviceException
+Message: WebserviceException:
+	Message: Error, provided model name is invalid. It must only consist of letters, numbers, dashes, periods, or underscores, start with a letter or number, and be between 1 and 255 characters long.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Error, provided model name is invalid. It must only consist of letters, numbers, dashes, periods, or underscores, start with a letter or number, and be between 1 and 255 characters long."
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 58, in _log_activity
+    yield
+  File "run.py", line 1036, in register_model
+    description=description)
+  File "run.py", line 2236, in register_model
+    model_name_validation(model_name)
+  File "_util.py", line 1132, in model_name_validation
+    raise WebserviceException('Error, provided model name is invalid. It must only consist of letters, '
+
+ExceptionTarget: None
+2021-10-24 08:03:07.696 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Failure, Duration=195.16[ms]
+2021-10-24 08:03:33.357 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-24 08:03:33.383 - INFO - 3597 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-24 08:03:33.554 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=171.05[ms]
+2021-10-24 08:03:34.320 - INFO - 3597 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=963.54[ms]
+2021-10-27 18:02:54.195 - INFO - 3855 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-27 18:02:54.363 - INFO - 3855 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-27 18:02:54.391 - INFO - 3855 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-27 18:02:54.585 - INFO - 3855 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=193.56[ms]
+2021-10-27 18:02:54.642 - INFO - 3855 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=279.06[ms]
+2021-10-27 18:02:54.642 - INFO - 3855 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-27 18:03:06.514 - INFO - 3855 - azureml.automl.runtime.distributed.utilities.horovod_initialized:70 - Horovod not found in current environment. Distribution via Horovod will be disabled.
+2021-10-27 18:03:11.806 - INFO - 3855 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=17164.0[ms]
+2021-10-27 18:03:11.848 - INFO - 3855 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=17653.03[ms]
+2021-10-28 12:21:52.053 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-28 12:21:52.113 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-28 12:21:52.145 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-28 12:21:52.326 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=180.66[ms]
+2021-10-28 12:21:52.393 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=280.26[ms]
+2021-10-28 12:21:52.399 - INFO - 3371 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-28 12:22:05.600 - INFO - 3371 - azureml.automl.runtime.distributed.utilities.horovod_initialized:70 - Horovod not found in current environment. Distribution via Horovod will be disabled.
+2021-10-28 12:22:11.231 - INFO - 3371 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=18831.61[ms]
+2021-10-28 12:22:11.253 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=19200.45[ms]
+2021-10-28 12:26:33.110 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-28 12:26:33.143 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-10-28 12:26:33.175 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-28 12:26:33.354 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=178.63[ms]
+2021-10-28 12:26:33.415 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=271.96[ms]
+2021-10-28 12:26:33.421 - INFO - 3371 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-10-28 12:26:34.458 - INFO - 3371 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=1036.9[ms]
+2021-10-28 12:26:34.463 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1352.61[ms]
+2021-10-28 12:27:24.998 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-28 12:27:25.029 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-28 12:27:25.177 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=148.06[ms]
+2021-10-28 12:27:26.154 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=1156.61[ms]
+2021-10-28 12:32:13.731 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2021-10-28 12:32:13.758 - INFO - 3371 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-10-28 12:32:14.021 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=263.05[ms]
+2021-10-28 12:32:14.852 - INFO - 3371 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=1121.26[ms]
